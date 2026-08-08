@@ -1,12 +1,5 @@
-// ============================================================
-// JOGO DA FORCA - Desafio da Aula 01 (POO + JavaScript)
-// Feito com Classes, conforme conteúdo revisado em aula.
-// Interação via console (Node.js).
-// ============================================================
-
 const readline = require("readline");
 
-// -------------------- CLASSE PRINCIPAL --------------------
 class JogoDaForca {
   constructor(palavras, tentativasMaximas = 6) {
     this.palavras = palavras;
@@ -22,7 +15,6 @@ class JogoDaForca {
     return this.palavras[indice].toUpperCase();
   }
 
-  // Retorna a palavra atual mascarada, ex: "_ A _ A"
   palavraMascarada() {
     return this.palavraSecreta
       .split("")
@@ -30,7 +22,6 @@ class JogoDaForca {
       .join(" ");
   }
 
-  // Verifica se a palavra já foi completamente descoberta
   venceu() {
     return this.palavraSecreta
       .split("")
@@ -45,7 +36,6 @@ class JogoDaForca {
     return this.venceu() || this.perdeu();
   }
 
-  // Processa o palpite do jogador
   tentar(letra) {
     letra = letra.toUpperCase();
 
@@ -144,7 +134,6 @@ class JogoDaForca {
   }
 }
 
-// -------------------- CLASSE DE CONTROLE DA PARTIDA --------------------
 class Partida {
   constructor(jogo) {
     this.jogo = jogo;
@@ -190,7 +179,6 @@ class Partida {
   }
 }
 
-// -------------------- EXECUÇÃO --------------------
 const bancoDePalavras = [
   "JAVASCRIPT",
   "PROGRAMACAO",
